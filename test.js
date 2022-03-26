@@ -4,6 +4,7 @@ let input = document.querySelector(".input");
 let add =document.querySelector(".add");
 let tasksDiv=document.querySelector(".tasks");
 let deleteAll = document.querySelector(".deleteAll");
+let doneAll = document.querySelector(".doneAll");
 
 let arrayOfTasks = [];
 
@@ -19,14 +20,31 @@ gettaskfromlocal();
  deleteAll.onclick = function(){
     localStorage.clear();
     tasksDiv.innerHTML = "";
+   
     deleteAll.style.display= "none";
+     doneAll.style.display= "none";
 }
+
+//Done All
+doneAll.addEventListener("click",(e)=>{
+   if(e.target.classList.contains("doneAll")){
+       for(let i = 0; i<arrayOfTasks.length;i++){
+           if(arrayOfTasks[i].complated==false){
+               arrayOfTasks[i].complated = true;
+           }
+       }
+      
+   }
+     addToLocalStorage(arrayOfTasks);
+    addTasksTopage(arrayOfTasks);
+})
 add.onclick = function(){
    if(input.value != ""){
        //Function of Add
        addTasksToArray(input.value);
        input.value = "";
        deleteAll.style.display= "block";
+       doneAll.style.display= "block";
    }
 }
 
@@ -39,6 +57,7 @@ tasksDiv.addEventListener("click",(e)=>{
         taskStatus(e.target.parentElement.parentElement.getAttribute("data-id"));
         e.target.parentElement.parentElement.classList.toggle("done");
     }
+
 })
 
 function addTasksToArray(taskText){
@@ -92,6 +111,7 @@ function gettaskfromlocal(){
         let task = JSON.parse(data);
         addTasksTopage(task);
         deleteAll.style.display= "block";
+         doneAll.style.display= "block";
     }
     
 }

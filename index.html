@@ -102,6 +102,13 @@
        .tasks .task span.del:hover{
         background-color:red;
       }
+      .all{
+          display: flex;
+          width: 300px;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+      }
       .deleteAll{
         width: fit-content;  
         padding: 8px 20px;
@@ -111,9 +118,25 @@
         cursor: pointer;
         font-weight: bold;
         transition: .3s;
-        display: none;
+         width: 70px;
         margin:15px auto;
         background-color: rgba(255, 0, 0, 0.692);
+        text-align: center;
+      }
+      .doneAll{
+        width: fit-content;  
+        padding: 8px 20px;
+        width: 70px;
+        font-size: 15px;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: .3s;
+        display: none;
+        text-align: center;
+        margin:15px auto;
+        background-color:rgb(25, 221, 25);
       }
     
 @media (max-width:600px){
@@ -133,6 +156,10 @@
           .deleteAll{
         padding: 8px 10px;
       }
+       .doneAll{
+        padding: 8px 10px;
+      }
+    
       .tasks{
             padding: 10px;
         }
@@ -158,7 +185,11 @@
         <div class="tasks">  
             
         </div>
-            <span class="deleteAll">Delete All</span> 
+        <div class="all">
+              <span class="deleteAll">Delete All</span> 
+            <span class="doneAll">Done All</span>
+        </div>
+          
     </div>
     <script src="test.js"></script>
 </body>
