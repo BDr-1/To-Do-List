@@ -20,7 +20,6 @@ gettaskfromlocal();
  deleteAll.onclick = function(){
     localStorage.clear();
     tasksDiv.innerHTML = "";
-   
     deleteAll.style.display= "none";
      doneAll.style.display= "none";
 }
@@ -109,9 +108,10 @@ function gettaskfromlocal(){
     let data = window.localStorage.getItem("Tasks");
     if(data){
         let task = JSON.parse(data);
-        addTasksTopage(task);
-        deleteAll.style.display= "block";
+         addTasksTopage(task);
          doneAll.style.display= "block";
+    }else{
+        deleteAll.style.display= "none";
     }
     
 }
@@ -130,7 +130,7 @@ for(let i =0 ; i<arrayOfTasks.length;i++){
     }else{
         arrayOfTasks[i].complated=false;
     }
-}
+    }
     }
 addToLocalStorage(arrayOfTasks);
 }
