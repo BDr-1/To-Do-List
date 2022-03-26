@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>To Do List</title>
+</head>
+<body>
+    <style>
+        *{
+            font-family:sans-serif;
+        }
+       body{
+          background-image: url(./12\ Must\ See\ Places\ On\ The\ South\ Island\ Of\ New\ Zealand.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+       }
+        .container{
+            width: 500px;
+            min-width: 300px;
+            margin: 40px auto;
+        }
+        .form{
+            display: flex;
+            align-items: center;
+            background-color: rgba(238, 238, 238, 0.404);
+            padding: 20px;
+            border-radius:6px;
+        }
+        .form .input{
+            flex: 1;
+            height: 40px;
+            border-radius: 6px;
+            border: none;
+            color: blue;
+            padding: 0 10px;
+            font-size: 17px;
+            transition: 0.3s;
+    
+            
+        }
+        .form .input[type=text]:focus{
+            outline-color: aqua;
+        }
+
+         .form .add{
+            background-color: blue;
+            border-radius: 6px;
+            border: none;
+            color: white;
+            margin-left: 10px;
+            padding:10px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+         .form .add:hover{
+            opacity: 1;
+        }
+        .tasks{
+            border-radius: 6px;
+            background-color: rgba(238, 238, 238, 0.404);
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .tasks .task {
+        background-color: white;
+        padding: 10px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.3s;
+        cursor: pointer;
+        border: none;
+        color: rgb(42, 42, 42);
+      }
+      .tasks .task:not(:last-child) {
+        margin-bottom: 15px;
+      }
+       .tasks .task.done {
+       color: rgba(0, 0, 0, 0.171);
+      }
+       .tasks .task span{
+        font-size: 15px;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: .3s;
+      }
+       .tasks .task span.del {
+        background-color: rgba(255, 0, 0, 0.438);
+        padding: 5px 8px;
+        
+      }
+       .tasks .task span.spanDone{
+        margin-right: 5px;
+        background-color:rgb(25, 221, 25);
+        padding: 5px;
+      }
+       .tasks .task span.del:hover{
+        background-color:red;
+      }
+      .deleteAll{
+        width: fit-content;  
+        padding: 8px 20px;
+        font-size: 15px;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: .3s;
+        display: none;
+        margin:15px auto;
+        background-color: rgba(255, 0, 0, 0.692);
+      }
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+       
+        <div class="form"> 
+            <input type="text" class="input" placeholder="Write Some Thing To Do It">
+            <input type="submit" class="add" value="Add Task" >
+        </div>
+        <div class="tasks">  
+            
+        </div>
+            <span class="deleteAll">Delete All</span> 
+    </div>
+    <script src="test.js"></script>
+</body>
+</html>
